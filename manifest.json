@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Lichess Custom Board Color",
+  "version": "1.0",
+  "description": "Overrides Lichess board colors with a custom scheme.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.lichess.org/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
