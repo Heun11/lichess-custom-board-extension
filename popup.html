@@ -3,24 +3,116 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { width: 200px; padding: 12px; font-family: sans-serif; }
-    .field { margin-bottom: 10px; }
-    label { display: block; font-size: 12px; margin-bottom: 4px; font-weight: bold; }
-    input[type="text"] { width: 100%; padding: 6px; box-sizing: border-box; font-family: monospace; }
-    button { width: 100%; padding: 8px; cursor: pointer; background: #3692e7; color: white; border: none; border-radius: 4px; font-weight: bold; }
+    body {
+      width: 460px;
+      padding: 12px;
+      font-family: sans-serif;
+      box-sizing: border-box;
+      background: #f8f9fa;
+      margin: 0;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .section-title {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 3px;
+      color: #333;
+    }
+    .field { margin-bottom: 6px; }
+    label { display: block; font-size: 11px; margin-bottom: 2px; font-weight: bold; color: #555; }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 4px 6px;
+      box-sizing: border-box;
+      font-family: monospace;
+      font-size: 11px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    textarea {
+      height: 60px;
+      resize: vertical;
+    }
+    .pieces-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    
+    button {
+      padding: 8px;
+      cursor: pointer;
+      background: #3692e7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
     button:hover { background: #2372c2; }
+    
+    .save-btn { width: 100%; margin-top: 10px; }
+    
+    .profile-section {
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px dashed #bbb;
+    }
+    .profile-actions { display: flex; gap: 8px; margin-bottom: 6px; }
+    .profile-actions button { flex: 1; background: #6c757d; font-size: 11px; }
+    .profile-actions button:hover { background: #5a6268; }
   </style>
 </head>
 <body>
-  <div class="field">
-    <label for="lightColor">Light Square Hex:</label>
-    <input type="text" id="lightColor" placeholder="#eae9d2">
+
+  <div class="grid-container">
+    <div>
+      <div class="section-title">Board & Colors</div>
+      <div class="field"><label>Light Square Hex:</label><input type="text" id="lightColor" placeholder="#eae9d2"></div>
+      <div class="field"><label>Dark Square Hex:</label><input type="text" id="darkColor" placeholder="#4b7399"></div>
+      <div class="field"><label>Move Highlight Hex:</label><input type="text" id="highlightColor" placeholder="#faf"></div>
+      <div class="field"><label>Arrow & Shapes Hex:</label><input type="text" id="arrowColor" placeholder="#ffaa00"></div>
+      <div class="field"><label>Move Options Hex:</label><input type="text" id="moveDestColor" placeholder="#14551e"></div>
+    </div>
+
+    <div>
+      <div class="section-title">Piece Image URLs</div>
+      <div class="pieces-subgrid">
+        <div>
+          <label style="color:#222; text-decoration:underline; margin-bottom:4px;">White</label>
+          <div class="field"><label>Pawn:</label><input type="text" id="wP" placeholder="https://..."></div>
+          <div class="field"><label>Knight:</label><input type="text" id="wN" placeholder="https://..."></div>
+          <div class="field"><label>Bishop:</label><input type="text" id="wB" placeholder="https://..."></div>
+          <div class="field"><label>Rook:</label><input type="text" id="wR" placeholder="https://..."></div>
+          <div class="field"><label>Queen:</label><input type="text" id="wQ" placeholder="https://..."></div>
+          <div class="field"><label>King:</label><input type="text" id="wK" placeholder="https://..."></div>
+        </div>
+        <div>
+          <label style="color:#222; text-decoration:underline; margin-bottom:4px;">Black</label>
+          <div class="field"><label>Pawn:</label><input type="text" id="bP" placeholder="https://..."></div>
+          <div class="field"><label>Knight:</label><input type="text" id="bN" placeholder="https://..."></div>
+          <div class="field"><label>Bishop:</label><input type="text" id="bB" placeholder="https://..."></div>
+          <div class="field"><label>Rook:</label><input type="text" id="bR" placeholder="https://..."></div>
+          <div class="field"><label>Queen:</label><input type="text" id="bQ" placeholder="https://..."></div>
+          <div class="field"><label>King:</label><input type="text" id="bK" placeholder="https://..."></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <label for="darkColor">Dark Square Hex:</label>
-    <input type="text" id="darkColor" placeholder="#4b7399">
+
+  <button id="saveBtn" class="save-btn">Apply Changes</button>
+
+  <div class="profile-section">
+    <div class="section-title">Profile Code (JSON)</div>
+    <div class="field">
+      <textarea id="jsonBox" placeholder="Paste a JSON profile code here to import, or click 'Export Code' to generate..."></textarea>
+    </div>
+    <div class="profile-actions">
+      <button id="exportBtn">Export Code</button>
+      <button id="importBtn">Load Code from Box</button>
+    </div>
   </div>
-  <button id="saveBtn">Apply Colors</button>
 
   <script src="popup.js"></script>
 </body>

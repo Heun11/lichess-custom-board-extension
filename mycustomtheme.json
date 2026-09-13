@@ -1,0 +1,21 @@
+{
+  "lightColor": "#eae9d2",
+  "darkColor": "#4b7399",
+  "highlightColor": "#dad",
+  "arrowColor": "#ffaa00",
+  "moveDestColor": "#000",
+  "pieces": {
+    "wP": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/wp.png",
+    "wN": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/wn.png",
+    "wB": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/wb.png",
+    "wR": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/wr.png",
+    "wQ": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/wq.png",
+    "wk": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/wk.png",
+    "bP": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/bp.png",
+    "bN": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/bn.png",
+    "bB": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/bb.png",
+    "bR": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/br.png",
+    "bQ": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/bq.png",
+    "bk": "https://raw.githubusercontent.com/GiorgioMegrelli/chess.com-boards-and-pieces/refs/heads/v2.x/pieces/game_room/bk.png"
+  }
+}
